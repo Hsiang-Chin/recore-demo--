@@ -2,7 +2,7 @@
 
 > 天然竹纖維尿布訂閱服務互動原型 · 創意整合課程期末展示
 
-**Live Demo → https://xiangren265.github.io/recore-demo-創意整合課程/**
+**Live Demo → https://hsiang-chin.github.io/recore-demo-創意整合課程/**
 
 ---
 
