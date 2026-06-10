@@ -30,7 +30,7 @@ const sections: FaqSection[] = [
       {
         q: '如何正確穿戴瑞兒外褲？',
         a: '① 拿取替換芯。\n② 抽換替換芯。\n③ 魔鬼氈穿戴固定。\n④ 輕鬆捲起降低垃圾面積。',
-        img: '/images/Usage%20Steps.png',
+        img: '/images/usage-steps.png',
       },
       {
         q: '多久需要更換替換芯？',
