@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/recore-demo-創意整合課程/', // GitHub Pages: hsiang-chin.github.io/recore-demo-...
+  base: './',
   plugins: [
     vue(),
     vueJsx(),
