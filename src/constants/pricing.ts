@@ -6,12 +6,12 @@
 export const PRICING = {
   // ── 單品售價 ──────────────────────────────────────────────
   shell: {
-    unitPrice: 349,           // 瑞兒外褲單售價（NT$）
+    unitPrice: 399,           // 瑞兒外褲單售價（NT$）
     addonDiscountPrice: 100,  // 加購優惠價（搭配方案時）
     maxQty: 10,               // 瑞兒外褲最大可購數量
   },
   liner: {
-    unitPrice: 18,             // 替換芯單片售價（NT$）
+    unitPrice: 28,             // 替換芯單片售價（NT$）
     minQty: 10,               // 最少購買片數
     maxQty: 300,              // 最大可購片數
     stepQty: 10,              // 每次調整步進數量
@@ -26,8 +26,8 @@ export const PRICING = {
       tag: '新客首選',
       shells: 1,
       liners: 30,
-      price: 750,
-      originalPrice: 899,
+      price: 714,
+      originalPrice: 840,
       addOnShellsAllowed: false,
       description: '瑞兒外褲 × 1 + 替換芯 × 30 片',
     },
@@ -38,8 +38,8 @@ export const PRICING = {
       tag: '最受歡迎',
       shells: 1,
       liners: 120,
-      price: 2200,
-      originalPrice: 2499,
+      price: 2856,
+      originalPrice: 3360,
       addOnShellsAllowed: true,
       description: '瑞兒外褲 × 1 + 替換芯 × 120 片',
     },
@@ -65,13 +65,13 @@ export const PRICING = {
       price: 0,
       originalPrice: 0,
       addOnShellsAllowed: false,
-      description: '可自由選擇數量（每片 NT$18）',
+      description: '可自由選擇數量（每片 NT$28）',
     },
   ] as const,
 
   // ── 訂閱優惠與頻率 ────────────────────────────────────────
   subscription: {
-    discountRate: 0.79,       // 訂閱折扣（85折）
+    discountRate: 0.85,       // 訂閱折扣（85折）
     frequencyOptions: [
       { label: '單次購買', weeks: 0, hint: '不使用訂閱週期，單次出貨' },
       { label: '每週配送', weeks: 1, hint: '適合新生兒高消耗期' },

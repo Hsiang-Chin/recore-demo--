@@ -91,7 +91,7 @@ const values = [
               <span class="crisis-number">1,300</span>
               <div class="crisis-stat-text">
                 <span class="crisis-unit">噸 / 每天（台灣）</span>
-                <span class="crisis-label">每年廢棄尿布堆高相當於超過 6 萬座台北 101，長期以焚化為唯一出路</span>
+                <span class="crisis-label">每年廢棄尿布堆高相當於超過 6 萬座台北 101，長期以焚化為主要出路</span>
               </div>
             </div>
           </div>
