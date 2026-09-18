@@ -103,7 +103,7 @@ const values = [
       <div class="story-section section">
         <h2 class="section-title">我們的故事</h2>
         <p class="story-text">
-          瑞可爾 RECORE 創立於 2026 年，由一群熱愛自然的明志畢業生共同創辦。
+          瑞可爾 RECORE 創立於 2026 年，由一群熱愛自然的年輕創業者共同創辦。
           我們親身體驗了每天丟棄大量一次性尿布的無奈，決心找到一條更永續的路。
         </p>
         <p class="story-text">
@@ -150,14 +150,14 @@ const values = [
             <span class="contact-icon">📧</span>
             <div>
               <div class="contact-label">客服信箱</div>
-              <div class="contact-val">mcut@mail.mcut.edu.tw</div>
+              <div class="contact-val">service@recore.com.tw</div>
             </div>
           </div>
           <div class="contact-item">
             <span class="contact-icon">📞</span>
             <div>
               <div class="contact-label">客服專線</div>
-              <div class="contact-val">02-2908-9899（週一至週五 09:00–18:00）</div>
+              <div class="contact-val">02-1234-5678（週一至週五 09:00–18:00）</div>
             </div>
           </div>
           <div class="contact-item">

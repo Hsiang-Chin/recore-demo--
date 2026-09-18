@@ -130,7 +130,7 @@ const sections: FaqSection[] = [
       },
       {
         q: '收到商品有瑕疵或與訂單不符怎麼辦？',
-        a: '請於收貨後 7 日內聯繫客服（Email：recore@mcut.edu.tw 或電話：02-2908-9899），並附上訂單編號及商品照片。確認後將安排免費換貨或全額退款，無需負擔退件運費。',
+        a: '請於收貨後 7 日內聯繫客服（Email：service@recore.com.tw 或電話：02-1234-5678），並附上訂單編號及商品照片。確認後將安排免費換貨或全額退款，無需負擔退件運費。',
       },
       {
         q: '一般情況下可以退貨嗎？',
@@ -246,18 +246,18 @@ function scrollToSection(id: string) {
         <p class="contact-title">找不到答案？</p>
         <p class="contact-desc">歡迎透過以下方式聯繫我們的客服團隊</p>
         <div class="contact-links">
-          <a class="contact-link" href="mailto:recore@mcut.edu.tw">
+          <a class="contact-link" href="mailto:service@recore.com.tw">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
               <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"/>
             </svg>
-            recore@mcut.edu.tw
+            service@recore.com.tw
           </a>
-          <a class="contact-link" href="tel:0229089899">
+          <a class="contact-link" href="tel:0212345678">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.61-.62a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2"/>
             </svg>
-            02-2908-9899
+            02-1234-5678
           </a>
         </div>
       </div>
