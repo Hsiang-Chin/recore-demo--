@@ -164,7 +164,7 @@ const values = [
             <span class="contact-icon">📍</span>
             <div>
               <div class="contact-label">公司地址</div>
-              <div class="contact-val">243303 新北市泰山區貴子里工專路84號</div>
+              <div class="contact-val">100 台北市中正區永續路 88 號 5 樓</div>
             </div>
           </div>
         </div>
