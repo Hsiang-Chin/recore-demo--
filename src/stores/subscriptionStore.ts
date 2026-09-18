@@ -33,21 +33,29 @@ export const useSubscriptionStore = defineStore('subscription', () => {
     PRICING.packages.find(p => p.id === selectedPackageId.value) ?? null,
   )
 
+  const addOnPrice = computed(() =>
+    selectedPackageId.value === 'standard'
+      ? addOnShells.value * PRICING.shell.addonDiscountPrice
+      : 0,
+  )
+
+  // 原價（未套用訂閱折扣）；方案以 originalPrice 計
   const basePrice = computed(() => {
     const pkg = selectedPackage.value
     if (!pkg) return 0
     if (pkg.id === 'shell-only') return shellQty.value * PRICING.shell.unitPrice
     if (pkg.id === 'liner-only') return linerQty.value * PRICING.liner.unitPrice
-    let price = pkg.price
-    if (pkg.id === 'standard') price += addOnShells.value * PRICING.shell.addonDiscountPrice
-    return price
+    return pkg.originalPrice + addOnPrice.value
   })
 
-  const totalPrice = computed(() =>
-    deliveryWeeks.value === 0
-      ? basePrice.value
-      : Math.round(basePrice.value * PRICING.subscription.discountRate),
-  )
+  // 訂閱價：方案直接採用設定的折扣後售價（price），避免重複打折；加購外褲維持優惠價
+  const totalPrice = computed(() => {
+    const pkg = selectedPackage.value
+    if (!pkg) return 0
+    if (deliveryWeeks.value === 0) return basePrice.value
+    if (pkg.price > 0) return pkg.price + addOnPrice.value
+    return Math.round(basePrice.value * PRICING.subscription.discountRate)
+  })
 
   const savingsAmount = computed(() =>
     basePrice.value - totalPrice.value,
