@@ -1,15 +1,29 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useAppStore } from '@/stores/appStore'
 import { useSubscriptionStore } from '@/stores/subscriptionStore'
-import { PRICING, type PackageId } from '@/constants/pricing'
+import { PRICING, type PackageId, type UserType } from '@/constants/pricing'
 
 const appStore = useAppStore()
 const subStore = useSubscriptionStore()
 
 const previewPackages = PRICING.packages.filter(p => p.id === 'trial' || p.id === 'standard')
 
+const typeLabel = computed(() => (subStore.userType === 'child' ? '兒童' : '成人'))
+
+function packageDesc(liners: number, shells: number) {
+  return `${typeLabel.value}替換芯 × ${liners} 片 + 瑞兒外褲 × ${shells}`
+}
+
+function setUserType(type: UserType) {
+  subStore.userType = type
+  subStore.selectedSize = null
+}
+
 function selectAndGo(id: PackageId) {
+  const type = subStore.userType
   subStore.reset()
+  subStore.userType = type
   subStore.selectPackage(id)
   appStore.navigate(1)
 }
@@ -18,6 +32,24 @@ function selectAndGo(id: PackageId) {
 <template>
   <section class="entry-section section-accent section">
     <h2 class="section-title">選擇適合的方案</h2>
+
+    <!-- 兒童 / 成人切換 -->
+    <div class="type-toggle">
+      <button
+        class="type-btn"
+        :class="{ active: subStore.userType === 'child' }"
+        @click="setUserType('child')"
+      >
+        👶 兒童
+      </button>
+      <button
+        class="type-btn"
+        :class="{ active: subStore.userType === 'adult' }"
+        @click="setUserType('adult')"
+      >
+        🧑 成人
+      </button>
+    </div>
 
     <div class="entry-cards">
       <div
@@ -28,7 +60,7 @@ function selectAndGo(id: PackageId) {
         <div v-if="pkg.tag" class="entry-badge badge">{{ pkg.tag }}</div>
         <div class="entry-icon">{{ pkg.id === 'trial' ? '🌱' : '⭐' }}</div>
         <h3 class="entry-name">{{ pkg.name }}</h3>
-        <p class="entry-desc">{{ pkg.description }}</p>
+        <p class="entry-desc">{{ packageDesc(pkg.liners, pkg.shells) }}</p>
         <div class="entry-pricing">
           <span class="entry-original">NT$ {{ pkg.originalPrice }}</span>
           <span class="entry-price">NT$ {{ pkg.price }}</span>
@@ -47,7 +79,7 @@ function selectAndGo(id: PackageId) {
           單買瑞兒外褲
         </button>
         <button class="btn-outline entry-custom-btn" @click="selectAndGo('liner-only')">
-          單買替換芯
+          單買{{ typeLabel }}替換芯
         </button>
       </div>
     </div>
@@ -57,6 +89,34 @@ function selectAndGo(id: PackageId) {
 <style scoped>
 .entry-section {
   background: var(--color-accent);
+}
+
+/* 兒童 / 成人切換 */
+.type-toggle {
+  display: flex;
+  background: var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.type-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+.type-btn.active {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .entry-cards {

@@ -21,7 +21,7 @@ function nextDeliveryDate(weeks: number) {
   <div class="step2">
     <div class="section">
       <h3 class="field-label">選擇配送方式</h3>
-      <p class="step-hint">定期訂閱享 79 折優惠，可隨時調整頻率或暫停</p>
+      <p class="step-hint">定期訂閱享 85 折優惠，可隨時調整頻率或暫停</p>
 
       <div class="freq-list">
         <div
